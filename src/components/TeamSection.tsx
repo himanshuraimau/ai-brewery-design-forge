@@ -1,6 +1,5 @@
-
 import React, { useRef } from 'react';
-import { Linkedin } from 'lucide-react';
+import { Linkedin, ArrowRight } from 'lucide-react';
 
 interface TeamMemberProps {
   name: string;
