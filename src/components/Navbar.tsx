@@ -1,10 +1,12 @@
 
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
 
   // Handle scroll effect
   useEffect(() => {
@@ -22,6 +24,13 @@ const Navbar: React.FC = () => {
     };
   }, []);
 
+  // Determine if a nav link is active
+  const isActive = (path: string) => {
+    if (path === '/' && location.pathname === '/') return true;
+    if (path !== '/' && location.pathname.startsWith(path)) return true;
+    return false;
+  };
+
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -32,18 +41,18 @@ const Navbar: React.FC = () => {
         <div className="flex justify-between items-center">
           {/* Logo */}
           <div className="flex items-center">
-            <span className="text-2xl font-space font-bold bg-gradient-to-r from-brewery-primary-purple to-brewery-secondary-pink text-transparent bg-clip-text">
+            <Link to="/" className="text-2xl font-space font-bold bg-gradient-to-r from-brewery-primary-purple to-brewery-secondary-pink text-transparent bg-clip-text">
               AI Brewery
-            </span>
+            </Link>
           </div>
 
           {/* Desktop navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <a href="#home" className="nav-link">Home</a>
-            <a href="#achievements" className="nav-link">Achievements</a>
-            <a href="#team" className="nav-link">Our Team</a>
-            <a href="#timeline" className="nav-link">Timeline</a>
-            <a href="#events" className="nav-link">Upcoming Events</a>
+            <Link to="/" className={`nav-link ${isActive('/') ? 'text-brewery-primary-purple' : ''}`}>Home</Link>
+            <Link to="/achievements" className={`nav-link ${isActive('/achievements') ? 'text-brewery-primary-purple' : ''}`}>Achievements</Link>
+            <Link to="/team" className={`nav-link ${isActive('/team') ? 'text-brewery-primary-purple' : ''}`}>Our Team</Link>
+            <Link to="/timeline" className={`nav-link ${isActive('/timeline') ? 'text-brewery-primary-purple' : ''}`}>Timeline</Link>
+            <Link to="/events" className={`nav-link ${isActive('/events') ? 'text-brewery-primary-purple' : ''}`}>Upcoming Events</Link>
           </div>
 
           {/* Mobile menu button */}
@@ -61,11 +70,11 @@ const Navbar: React.FC = () => {
         {isOpen && (
           <div className="md:hidden mt-4 py-4 glass-panel animate-fade-in-up">
             <div className="flex flex-col space-y-4 px-4">
-              <a href="#home" className="nav-link block py-2" onClick={() => setIsOpen(false)}>Home</a>
-              <a href="#achievements" className="nav-link block py-2" onClick={() => setIsOpen(false)}>Achievements</a>
-              <a href="#team" className="nav-link block py-2" onClick={() => setIsOpen(false)}>Our Team</a>
-              <a href="#timeline" className="nav-link block py-2" onClick={() => setIsOpen(false)}>Timeline</a>
-              <a href="#events" className="nav-link block py-2" onClick={() => setIsOpen(false)}>Upcoming Events</a>
+              <Link to="/" className={`nav-link block py-2 ${isActive('/') ? 'text-brewery-primary-purple' : ''}`} onClick={() => setIsOpen(false)}>Home</Link>
+              <Link to="/achievements" className={`nav-link block py-2 ${isActive('/achievements') ? 'text-brewery-primary-purple' : ''}`} onClick={() => setIsOpen(false)}>Achievements</Link>
+              <Link to="/team" className={`nav-link block py-2 ${isActive('/team') ? 'text-brewery-primary-purple' : ''}`} onClick={() => setIsOpen(false)}>Our Team</Link>
+              <Link to="/timeline" className={`nav-link block py-2 ${isActive('/timeline') ? 'text-brewery-primary-purple' : ''}`} onClick={() => setIsOpen(false)}>Timeline</Link>
+              <Link to="/events" className={`nav-link block py-2 ${isActive('/events') ? 'text-brewery-primary-purple' : ''}`} onClick={() => setIsOpen(false)}>Upcoming Events</Link>
             </div>
           </div>
         )}
