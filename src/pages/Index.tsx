@@ -1,12 +1,49 @@
-// Update this page (the content is just a fallback if you fail to update the page)
 
-const Index = () => {
+import React from 'react';
+import Navbar from '../components/Navbar';
+import HeroSection from '../components/HeroSection';
+import WhatWeDoSection from '../components/WhatWeDoSection';
+import AchievementsSection from '../components/AchievementsSection';
+import TimelineSection from '../components/TimelineSection';
+import TeamSection from '../components/TeamSection';
+import EventsSection from '../components/EventsSection';
+import JoinSection from '../components/JoinSection';
+import Footer from '../components/Footer';
+
+const Index: React.FC = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen flex flex-col">
+      <Navbar />
+      
+      <main className="flex-grow">
+        <HeroSection />
+        
+        <div className="py-16">
+          <WhatWeDoSection />
+        </div>
+        
+        <div className="py-16">
+          <AchievementsSection />
+        </div>
+        
+        <div className="py-16">
+          <TimelineSection />
+        </div>
+        
+        <div className="py-16">
+          <TeamSection />
+        </div>
+        
+        <div className="py-16">
+          <EventsSection />
+        </div>
+        
+        <div className="py-16">
+          <JoinSection />
+        </div>
+      </main>
+      
+      <Footer />
     </div>
   );
 };
