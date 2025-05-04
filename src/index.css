@@ -3,7 +3,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Titillium+Web:wght@300;400;600;700&display=swap');
 @import url('https://api.fontshare.com/v2/css?f[]=satoshi@500,700&display=swap');
 
 @layer base {
@@ -50,17 +50,17 @@
   }
   
   body {
-    @apply bg-brewery-background text-white font-inter antialiased;
+    @apply bg-brewery-background text-white font-titillium antialiased;
     background-image: radial-gradient(circle at top right, #0F0915 0%, #050505 70%);
     background-attachment: fixed;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-space font-bold;
+    @apply font-chakra font-bold;
   }
 
   button, .button {
-    @apply font-satoshi font-medium;
+    @apply font-chakra font-medium;
   }
 }
 
@@ -78,7 +78,7 @@
   }
   
   .nav-link {
-    @apply relative px-2 py-1 font-satoshi text-white/80 hover:text-white transition-colors duration-200 after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:-bottom-1 after:left-0 after:bg-brewery-primary-purple after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left;
+    @apply relative px-2 py-1 font-chakra text-white/80 hover:text-white transition-colors duration-200 after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:-bottom-1 after:left-0 after:bg-brewery-primary-purple after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left;
   }
 
   .gradient-heading {
@@ -86,11 +86,11 @@
   }
   
   .cta-primary {
-    @apply px-6 py-3 rounded-lg bg-cta-gradient text-white font-satoshi font-medium transition-all duration-200 hover:shadow-[0_0_15px_rgba(139,92,246,0.5)] hover:scale-105;
+    @apply px-6 py-3 rounded-lg bg-cta-gradient text-white font-chakra font-medium transition-all duration-200 hover:shadow-[0_0_15px_rgba(139,92,246,0.5)] hover:scale-105;
   }
   
   .cta-secondary {
-    @apply px-6 py-3 rounded-lg bg-transparent border border-white/20 text-white font-satoshi font-medium transition-all duration-200 hover:bg-white/5 hover:border-white/30;
+    @apply px-6 py-3 rounded-lg bg-transparent border border-white/20 text-white font-chakra font-medium transition-all duration-200 hover:bg-white/5 hover:border-white/30;
   }
   
   .section-container {

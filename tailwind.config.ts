@@ -74,6 +74,8 @@ export default {
 				}
 			},
 			fontFamily: {
+				'chakra': ['Chakra Petch', 'sans-serif'],
+				'titillium': ['Titillium Web', 'sans-serif'],
 				'space': ['Space Grotesk', 'sans-serif'],
 				'inter': ['Inter', 'sans-serif'],
 				'satoshi': ['Satoshi', 'sans-serif'],
@@ -116,6 +118,10 @@ export default {
 				'pulse-glow': {
 					'0%, 100%': { boxShadow: '0 0 5px rgba(139, 92, 246, 0.3)' },
 					'50%': { boxShadow: '0 0 15px rgba(139, 92, 246, 0.7)' }
+				},
+				'rotate': {
+					'0%': { transform: 'rotate(0deg)' },
+					'100%': { transform: 'rotate(360deg)' }
 				}
 			},
 			animation: {
@@ -126,6 +132,9 @@ export default {
 				'fade-in-up': 'fade-in-up 0.7s ease-out forwards',
 				'border-glow': 'border-glow 2s ease-in-out infinite',
 				'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
+				'rotate': 'rotate 20s linear infinite',
+				'rotate-slow': 'rotate 30s linear infinite',
+				'rotate-fast': 'rotate 10s linear infinite',
 			},
 			backgroundImage: {
 				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
