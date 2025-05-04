@@ -2,7 +2,7 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import TypewriterComponent from './TypewriterComponent';
-import Complex3DAnimation from './Complex3DAnimation';
+import HeroAnimation from './HeroAnimation';
 
 const HeroSection: React.FC = () => {
   return (
@@ -41,7 +41,7 @@ const HeroSection: React.FC = () => {
         
         {/* Right content - 3D animation */}
         <div className="lg:col-span-5 relative h-[400px] sm:h-[500px] lg:h-[600px]">
-          <Complex3DAnimation />
+          <HeroAnimation />
         </div>
       </div>
     </section>
